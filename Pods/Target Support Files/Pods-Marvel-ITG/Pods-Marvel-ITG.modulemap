@@ -1,0 +1,6 @@
+framework module Pods_Marvel_ITG {
+  umbrella header "Pods-Marvel-ITG-umbrella.h"
+
+  export *
+  module * { export * }
+}

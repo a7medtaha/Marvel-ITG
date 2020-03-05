@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EmptyView" customModule="Moon_Shop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="629"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyData" translatesAutoresizingMaskIntoConstraints="NO" id="Qsb-91-O3W">
+                    <rect key="frame" x="0.0" y="352" width="356" height="225"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcP-f2-TGw">
+                    <rect key="frame" x="0.0" y="587" width="356" height="22"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Qsb-91-O3W" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Hfg-QL-z08"/>
+                <constraint firstItem="gcP-f2-TGw" firstAttribute="width" secondItem="Qsb-91-O3W" secondAttribute="width" id="N9m-iC-N4M"/>
+                <constraint firstItem="gcP-f2-TGw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NhO-Jf-TB2"/>
+                <constraint firstItem="gcP-f2-TGw" firstAttribute="top" secondItem="Qsb-91-O3W" secondAttribute="bottom" constant="10" id="lAC-oi-5Ij"/>
+                <constraint firstItem="Qsb-91-O3W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="o2r-f3-qb0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gcP-f2-TGw" secondAttribute="bottom" constant="20" id="uqE-zb-QDB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="photo" destination="Qsb-91-O3W" id="shp-jD-A5J"/>
+                <outlet property="titleLbl" destination="gcP-f2-TGw" id="UwS-fq-2cq"/>
+            </connections>
+            <point key="canvasLocation" x="95.652173913043484" y="63.28125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="emptyData" width="225" height="225"/>
+    </resources>
+</document>
