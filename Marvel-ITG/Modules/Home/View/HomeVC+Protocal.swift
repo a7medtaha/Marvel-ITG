@@ -7,7 +7,14 @@
 //
 
 import Foundation
-extension HomeVC: LoaderDelegate{
+extension HomeVC: HomeVCView{
+    func didSelectItem<T>(with data: T) {
+        let vc = DetailsVC()
+        vc.item = data as? Results
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
   
     
     func onConnection() {

@@ -7,13 +7,15 @@
 //
 
 import Foundation
+
 class HomeVCInteractor {
 
 private let apiManager =  APIManager()
 private let decoder = JSONDecoder()
-typealias model = (CharacterBaseData)->()
+typealias model = (Character_Base)->()
 
     func get_charactors(offeset:Int, didDataReady: @escaping model, andErrorCompletion errorCompletion: @escaping errorCompletionType) {
+        print("#Url==>\(AppUrls.shared.getCharacters(pageNumber: offeset))")
         apiManager.contectToApiWith(url: AppUrls.shared.getCharacters(pageNumber: offeset),
                                 methodType: .get,
                                 params: nil,
@@ -22,7 +24,7 @@ typealias model = (CharacterBaseData)->()
                                     if let data = try? JSONSerialization.data(withJSONObject: json) {
                                         
                                         do {
-                                            let result = try self.decoder.decode(CharacterBaseData.self, from: data)
+                                            let result = try self.decoder.decode(Character_Base.self, from: data)
                                             didDataReady(result)
                                             
                                         }catch{

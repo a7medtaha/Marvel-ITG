@@ -5,20 +5,16 @@
 //  Created by a7med on 3/5/20.
 //  Copyright © 2020 a7med. All rights reserved.
 //
-protocol LoaderDelegate:class {
-    func loader_start()
-    func loader_stop()
-    func onFailure<T>(_ msg: T)
-    func onSuccess<T>(_ msg: T)
-    func onEmpty()
-    func onConnection()
-}
+
 import Foundation
+protocol HomeVCView: LoaderDelegate {
+    func didSelectItem<T>(with data: T)
+}
 class HomeVCPresenter {
     private let interactor = HomeVCInteractor()
-    private var list = [Character]()
-    weak var view: LoaderDelegate?
-    init(view:LoaderDelegate) {
+    private var list = [Results]()
+    weak var view: HomeVCView?
+    init(view:HomeVCView) {
         self.view = view
     }
     
@@ -26,8 +22,8 @@ class HomeVCPresenter {
         view?.loader_start()
         interactor.get_charactors(offeset: offest, didDataReady: { [weak self](model) in
             guard self != nil else { return }
-            if model.responseCode == API_status.Success.rawValue{
-                self?.list = model.apiDataSource?.characters ?? []
+            if model.code == API_status.Success.rawValue{
+                self?.list = model.data?.results ?? []
                 if self!.list.count == 0{
                     self?.view?.onEmpty()
                 }else{
@@ -47,9 +43,9 @@ class HomeVCPresenter {
 
     func configureCell(cell: CharacterCellView,at row: Int)  {
         let item = list[row]
-        cell.setName(name: item.name ?? "")
-        let image_url = (item.thumbnail?.path ?? "") + "." + (item.thumbnail?.fileExtension ?? "")
-        print("#image_url ==> ",image_url)
+        cell.setData(item.name ?? "")
+        let image_url = (item.thumbnail?.path ?? "") + "." + (item.thumbnail?.exten ?? "")
+//        print("#image_url ==> ",image_url)
         cell.setPhoto(with: image_url)
  
        
@@ -60,7 +56,8 @@ class HomeVCPresenter {
         return list.count
     }
   func didselect(at row: Int)  {
-    let item = list[row].id ?? 0
+    let item = list[row]
+    view?.didSelectItem(with: item)
   
    }
 

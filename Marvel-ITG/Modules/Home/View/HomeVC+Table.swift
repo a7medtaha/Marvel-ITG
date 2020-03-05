@@ -19,6 +19,14 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource {
         return cell
     }
   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.animateButtonPress()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            self!.presenter.didselect(at: indexPath.row)
+
+        }
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height / 3.8
     }
