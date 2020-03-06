@@ -12,6 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
+import RealmSwift
 struct Thumbnail : Codable {
 	let path : String?
 	let exten : String?
@@ -27,5 +28,12 @@ struct Thumbnail : Codable {
 		path = try values.decodeIfPresent(String.self, forKey: .path)
 		exten = try values.decodeIfPresent(String.self, forKey: .exten)
 	}
+
+}
+
+class ThumbnailCached : Object {
+    @objc dynamic var path : String = ""
+    @objc dynamic var exten : String = ""
+    var results = LinkingObjects(fromType: ResultsCached.self, property: "thumbnail")
 
 }

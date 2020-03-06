@@ -11,6 +11,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 */
 
+import RealmSwift
 import Foundation
 struct Results : Codable {
 	let id : Int?
@@ -19,10 +20,10 @@ struct Results : Codable {
 	let modified : String?
 	let thumbnail : Thumbnail?
 	let resourceURI : String?
-	let comics : Comics?
-	let series : Series?
+	let comics : Stories?
+	let series : Stories?
 	let stories : Stories?
-	let events : Events?
+	let events : Stories?
 	let urls : [Urls]?
 
 	enum CodingKeys: String, CodingKey {
@@ -48,11 +49,30 @@ struct Results : Codable {
 		modified = try values.decodeIfPresent(String.self, forKey: .modified)
 		thumbnail = try values.decodeIfPresent(Thumbnail.self, forKey: .thumbnail)
 		resourceURI = try values.decodeIfPresent(String.self, forKey: .resourceURI)
-		comics = try values.decodeIfPresent(Comics.self, forKey: .comics)
-		series = try values.decodeIfPresent(Series.self, forKey: .series)
+		comics = try values.decodeIfPresent(Stories.self, forKey: .comics)
+		series = try values.decodeIfPresent(Stories.self, forKey: .series)
 		stories = try values.decodeIfPresent(Stories.self, forKey: .stories)
-		events = try values.decodeIfPresent(Events.self, forKey: .events)
+		events = try values.decodeIfPresent(Stories.self, forKey: .events)
 		urls = try values.decodeIfPresent([Urls].self, forKey: .urls)
 	}
 
+}
+
+
+class ResultsCached : Object {
+    //RealmObject
+    @objc dynamic var name  : String = ""
+     @objc dynamic var id : Int = 0
+     @objc dynamic var desc : String = ""
+     @objc dynamic var modified : String = ""
+    @objc dynamic var thumbnail :  ThumbnailCached?
+     @objc dynamic var resourceURI : String = ""
+    @objc dynamic var comics : StoriesCached?
+     @objc dynamic var series : StoriesCached?
+     @objc dynamic var stories : StoriesCached?
+     @objc dynamic var events : StoriesCached?
+     let urls = List<UrlsCached>()
+
+    //Codable For JSON Deserialziation
+   
 }

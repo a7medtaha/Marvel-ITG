@@ -22,9 +22,11 @@ class ItemCell: UICollectionViewCell,ItemCellView {
        }
        
        func setPhoto(with Url: String) {
-           let logo_url = URL(string: Url)
-           photo.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        photo.sd_setImage(with: logo_url, placeholderImage: placeHolder_image, options: .continueInBackground)
-           
+
+      let logo_url = URL(string: Url)
+      photo.sd_imageTransition = .fade
+      
+      photo.sd_imageIndicator = SDWebImageActivityIndicator.gray
+      photo.sd_setImage(with: logo_url, placeholderImage: placeHolder_image, options: [.continueInBackground,.progressiveLoad])
        }
 }

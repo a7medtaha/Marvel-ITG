@@ -8,14 +8,23 @@
 
 import Foundation
 extension HomeVC: HomeVCView{
+    func reloadWithCach() {
+        tableView.reloadData()
+    }
+    
     func didSelectItem<T>(with data: T) {
         let vc = DetailsVC()
-        vc.item = data as? Results
+        if ((data as? Results) != nil){
+            vc.item = data as? Results
+        }
+        if ((data as? ResultsCached) != nil){
+            vc.itemCached = data as? ResultsCached
+        }
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true, completion: nil)
     }
     
-  
+    
     
     func onConnection() {
         tableView.setConnectionView()
@@ -27,22 +36,23 @@ extension HomeVC: HomeVCView{
     }
     
     func onFailure<T>(_ msg: T) {
-       print("")
+        print("")
     }
     
     func onSuccess<T>(_ msg: T) {
+        pageCounter += 1
         tableView.reloadData()
     }
-  
+    
     
     func loader_start() {
-        print("")
-//        startAnimating()
+        activityIndicator.displayActivity(view: tableView)
+        activityIndicator.startAanimating()
     }
     
     func loader_stop() {
-         print("")
-//        stopAnimating()
+        activityIndicator.stopAnimating()
+        
     }
     
     

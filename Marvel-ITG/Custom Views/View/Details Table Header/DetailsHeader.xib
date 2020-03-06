@@ -16,6 +16,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBj-J3-ooa">
                     <rect key="frame" x="0.0" y="-50" width="417" height="282"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZa-QI-teI">
                     <rect key="frame" x="16" y="16" width="40" height="30"/>
@@ -48,6 +49,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back" width="21" height="21"/>
+        <image name="back" width="20" height="20"/>
     </resources>
 </document>

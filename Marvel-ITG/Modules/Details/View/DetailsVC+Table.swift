@@ -12,7 +12,8 @@ extension DetailsVC:UITableViewDelegate,UITableViewDataSource {
         return 7
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return   section == 6 ?  item?.urls?.count ?? 0 : 1
+        let count = item != nil ? item?.urls?.count ?? 0 : itemCached?.urls.count ?? 0
+        return   section == 6 ?  count  : 1
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -49,12 +50,12 @@ extension DetailsVC:UITableViewDelegate,UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell", for: indexPath) as! TextCell
-            cell.setData(item?.name ?? "No Name ")
+            cell.setData( item != nil ? item?.name ?? "No Name " :  itemCached?.name ?? "No Name ")
             cell.setExpandBtn(true)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell", for: indexPath) as! TextCell
-            cell.setData(item?.description ?? "No Description ")
+            cell.setData(item != nil ? item?.description ?? "No Name " :  itemCached?.desc ?? "No Name ")
             cell.setExpandBtn(true)
             return cell
         case 2,3,4,5:
@@ -64,7 +65,7 @@ extension DetailsVC:UITableViewDelegate,UITableViewDataSource {
             return cell
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "TextCell", for: indexPath) as! TextCell
-            cell.setData(item?.urls?[indexPath.row].type ?? "")
+            cell.setData( item != nil ? item?.urls?[indexPath.row].type ?? "" : itemCached?.urls[indexPath.row].type)
             cell.setExpandBtn(false)
             return cell
         default:

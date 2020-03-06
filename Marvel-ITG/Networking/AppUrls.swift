@@ -11,10 +11,8 @@ enum API_status: Int {
 
 
 class AppUrls{
-    private var limit: Int = 30
+    private var limit: Int = 16
     private let baseURL = "https://gateway.marvel.com"
-    static let shared  = AppUrls()
-    private init (){}
 //    static let shared = AppUrls()
     func getCharacters(pageNumber: Int = 0) -> String{
         let endpoint = "/v1/public/characters"

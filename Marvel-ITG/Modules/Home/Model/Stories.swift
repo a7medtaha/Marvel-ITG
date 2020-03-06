@@ -12,6 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
+import RealmSwift
 struct Stories : Codable {
 	let available : Int?
 	let collectionURI : String?
@@ -33,5 +34,19 @@ struct Stories : Codable {
 		items = try values.decodeIfPresent([Items].self, forKey: .items)
 		returned = try values.decodeIfPresent(Int.self, forKey: .returned)
 	}
+
+}
+
+
+class StoriesCached : Object {
+    @objc dynamic var available : Int = 0
+    @objc dynamic var collectionURI : String = ""
+    @objc dynamic var returned : Int = 0
+    var comics = LinkingObjects(fromType: ResultsCached.self, property: "comics")
+    var series = LinkingObjects(fromType: ResultsCached.self, property: "series")
+    var stories = LinkingObjects(fromType: ResultsCached.self, property: "stories")
+    var events = LinkingObjects(fromType: ResultsCached.self, property: "events")
+
+    var items = List<ItemsCached>()
 
 }

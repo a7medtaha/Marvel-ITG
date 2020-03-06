@@ -15,8 +15,8 @@ private let decoder = JSONDecoder()
 typealias model = (Character_Base)->()
 
     func get_charactors(offeset:Int, didDataReady: @escaping model, andErrorCompletion errorCompletion: @escaping errorCompletionType) {
-        print("#Url==>\(AppUrls.shared.getCharacters(pageNumber: offeset))")
-        apiManager.contectToApiWith(url: AppUrls.shared.getCharacters(pageNumber: offeset),
+        print("#Url==>\(AppUrls().getCharacters(pageNumber: offeset))")
+        apiManager.contectToApiWith(url: AppUrls().getCharacters(pageNumber: offeset),
                                 methodType: .get,
                                 params: nil,
                                 success: { (json) in
@@ -28,7 +28,7 @@ typealias model = (Character_Base)->()
                                             didDataReady(result)
                                             
                                         }catch{
-                                            print("XParsing model error\(error)")
+                                            print("#@XParsing model error\(error)")
                                             
                                         }
                                         

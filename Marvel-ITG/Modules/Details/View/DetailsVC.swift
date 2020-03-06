@@ -10,6 +10,8 @@ import UIKit
 
  class DetailsVC: UIViewController {
     var item : Results?
+    var itemCached : ResultsCached?
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

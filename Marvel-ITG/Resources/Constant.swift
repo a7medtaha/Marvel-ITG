@@ -13,3 +13,5 @@ let publicKey = "276c46a0c17d3f6fc9c49af0dbf735e1" //"developer.marvel.com publi
 let placeHolder_image = UIImage(named: "no-image")!
 let emptyData = UIImage(named: "emptyData")!
 let connectionError = UIImage(named: "no-connection")!
+let xlarge = "portrait_xlarge"
+let meduim = "portrait_medium"

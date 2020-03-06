@@ -40,4 +40,14 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource {
         
     }
     
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+           let offsetY = scrollView.contentOffset.y
+           let contentHeight = scrollView.contentSize.height
+           
+           if offsetY > contentHeight - scrollView.frame.size.height - 160{
+            
+            presenter.get_list(offest: pageCounter)
+           }
+       }
 }

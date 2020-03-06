@@ -78,7 +78,7 @@ class APIManager {
                           parameters: params,
                           encoding: URLEncoding.default, headers: HEADER).validate().responseJSON{ response in
                             if response.result.error != nil {
-                                print("@PIManger\( response.result.error!)")
+                                print("#@PIManger\( response.result.error!)")
                                 if let errorCodeValue = response.error?._code,
                                     let errorCode = ErrorCode(rawValue: errorCodeValue){
                                     errorHandler(errorCode, response.error)
@@ -89,7 +89,7 @@ class APIManager {
                             }
                             
                             if response.data?.count == 0 {
-                                errorHandler(ErrorCode.UnKnown, "No Data Retrived")
+                                errorHandler(ErrorCode.UnKnown, "#@No Data Retrived")
                                 return
                             }
                             if let responseValue = response.value {

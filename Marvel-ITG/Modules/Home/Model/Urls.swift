@@ -12,6 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
+import RealmSwift
 struct Urls : Codable {
 	let type : String?
 	let url : String?
@@ -27,5 +28,11 @@ struct Urls : Codable {
 		type = try values.decodeIfPresent(String.self, forKey: .type)
 		url = try values.decodeIfPresent(String.self, forKey: .url)
 	}
+
+}
+class UrlsCached: Object {
+    @objc dynamic var type: String = ""
+    @objc dynamic var url: String = ""
+    var results = LinkingObjects(fromType: ResultsCached.self, property: "urls")
 
 }

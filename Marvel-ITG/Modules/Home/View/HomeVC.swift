@@ -11,6 +11,9 @@ import UIKit
 class HomeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private (set) var presenter : HomeVCPresenter!
+    private  (set) var activityIndicator = ActivityIndicator()
+   internal var pageCounter = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +22,7 @@ class HomeVC: UIViewController {
          setNavBarTitle()
         setTableView()
         presenter = HomeVCPresenter(view: self)
-        presenter.get_list(offest: 0)
+        presenter.get_list(offest: pageCounter)
     }
     
 
