@@ -33,15 +33,10 @@ class CharacterCell: UITableViewCell,CharacterCellView {
     }
     
     func setPhoto(with Url: String) {
+         
         let logo_url = URL(string: Url)
         photo.sd_imageTransition = .fade
-             
-             photo.sd_imageIndicator = SDWebImageActivityIndicator.gray
-        photo.sd_setImage(with: logo_url, placeholderImage: placeHolder_image, options: [.continueInBackground,.progressiveLoad,.highPriority,.queryDiskDataSync])
-        let imageCache =  SDImageCache.shared
-        imageCache.store(photo.image, imageData: photo.image?.pngData(), forKey: Url, cacheType: .disk) {
-            print("stored block")
-        }
-     
+        photo.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        photo.sd_setImage(with: logo_url, placeholderImage: placeHolder_image, options: [.continueInBackground,.progressiveLoad])
     }
 }

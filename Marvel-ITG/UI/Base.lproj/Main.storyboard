@@ -34,6 +34,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="BY9-k7-rrj"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="TGg-GO-ekN">
                             <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="searchBarBtnPressed:" destination="BYZ-38-t0r" id="fY1-Kp-AAU"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -44,38 +47,31 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="88.605697151424295"/>
         </scene>
-        <!--View Controller-->
+        <!--SearchVC-->
         <scene sceneID="GmR-5J-8in">
             <objects>
-                <viewController id="72h-JG-a4e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="72h-JG-a4e" customClass="SearchVC" customModule="Marvel_ITG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wqf-Wb-usg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-Qd-o2P">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="F7t-Pd-HZ7"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D4v-7e-RNb">
-                                <rect key="frame" x="0.0" y="45" width="375" height="622"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2n3-Qd-o2P" firstAttribute="leading" secondItem="iau-7x-AU6" secondAttribute="leading" id="4zi-lj-DuP"/>
                             <constraint firstItem="D4v-7e-RNb" firstAttribute="trailing" secondItem="iau-7x-AU6" secondAttribute="trailing" id="RET-J9-5e1"/>
-                            <constraint firstItem="D4v-7e-RNb" firstAttribute="top" secondItem="2n3-Qd-o2P" secondAttribute="bottom" symbolic="YES" id="pkc-rX-MvD"/>
+                            <constraint firstItem="D4v-7e-RNb" firstAttribute="top" secondItem="iau-7x-AU6" secondAttribute="top" id="Ska-mz-6iv"/>
                             <constraint firstItem="D4v-7e-RNb" firstAttribute="bottom" secondItem="iau-7x-AU6" secondAttribute="bottom" id="rTK-IS-wRS"/>
-                            <constraint firstItem="2n3-Qd-o2P" firstAttribute="top" secondItem="iau-7x-AU6" secondAttribute="top" id="rYJ-zE-ikq"/>
-                            <constraint firstItem="2n3-Qd-o2P" firstAttribute="trailing" secondItem="iau-7x-AU6" secondAttribute="trailing" id="wiN-ML-0Jh"/>
                             <constraint firstItem="D4v-7e-RNb" firstAttribute="leading" secondItem="iau-7x-AU6" secondAttribute="leading" id="xbd-U9-NFS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iau-7x-AU6"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="D4v-7e-RNb" id="TUV-0z-qWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xd-ux-I7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,8 +6,20 @@
 //  Copyright © 2020 a7med. All rights reserved.
 //
 
-import Foundation
+import UIKit
 extension HomeVC: HomeVCView{
+    func presentSearchVC<T>(with data: T) {
+        let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
+               if ((data as? [Results]) != nil){
+                print("data",data)
+                   vc.items = data as? [Results]
+               }
+               if ((data as? [ResultsCached]) != nil){
+                   vc.itemsCached = data as? [ResultsCached]
+               }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func reloadWithCach() {
         tableView.reloadData()
     }

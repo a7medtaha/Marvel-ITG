@@ -46,7 +46,8 @@
 		8180CEFD241193150005A1CF /* DetailsVC+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CEFC241193150005A1CF /* DetailsVC+Collection.swift */; };
 		8180CEFF2411B22C0005A1CF /* UIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8180CEFE2411B22C0005A1CF /* UIViewEx.swift */; };
 		81A941F824123FB5000CBC4F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A941F724123FB5000CBC4F /* ActivityIndicator.swift */; };
-		81A941FE2412D9F9000CBC4F /* UIImageEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A941FD2412D9F9000CBC4F /* UIImageEx.swift */; };
+		81A942022412EAB1000CBC4F /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A942012412EAB1000CBC4F /* SearchVC.swift */; };
+		81A942042412EBAA000CBC4F /* SearchVC+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A942032412EBAA000CBC4F /* SearchVC+Table.swift */; };
 		81AA81442410D2960082C44C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AA81432410D2960082C44C /* AppDelegate.swift */; };
 		81AA814B2410D2960082C44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AA81492410D2960082C44C /* Main.storyboard */; };
 		81AA814D2410D2980082C44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AA814C2410D2980082C44C /* Assets.xcassets */; };
@@ -97,7 +98,8 @@
 		8180CEFC241193150005A1CF /* DetailsVC+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsVC+Collection.swift"; sourceTree = "<group>"; };
 		8180CEFE2411B22C0005A1CF /* UIViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEx.swift; sourceTree = "<group>"; };
 		81A941F724123FB5000CBC4F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		81A941FD2412D9F9000CBC4F /* UIImageEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageEx.swift; sourceTree = "<group>"; };
+		81A942012412EAB1000CBC4F /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		81A942032412EBAA000CBC4F /* SearchVC+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+Table.swift"; sourceTree = "<group>"; };
 		81AA81402410D2960082C44C /* Marvel-ITG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel-ITG.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AA81432410D2960082C44C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81AA814A2410D2960082C44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -249,7 +251,6 @@
 			children = (
 				816BEAD124111D8A00339E5A /* TableViewEx.swift */,
 				8180CEFE2411B22C0005A1CF /* UIViewEx.swift */,
-				81A941FD2412D9F9000CBC4F /* UIImageEx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +353,23 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		81A941FF2412EA94000CBC4F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				81A942002412EA9B000CBC4F /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		81A942002412EA9B000CBC4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				81A942012412EAB1000CBC4F /* SearchVC.swift */,
+				81A942032412EBAA000CBC4F /* SearchVC+Table.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		81AA81372410D2960082C44C = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +414,7 @@
 		81AA81582410D3960082C44C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				81A941FF2412EA94000CBC4F /* Search */,
 				8180CEC6241143360005A1CF /* Details */,
 				81147E722410E34900059D5A /* Home */,
 			);
@@ -564,15 +583,16 @@
 				81147E8C2411132B00059D5A /* HomeVCInteractor.swift in Sources */,
 				81A941F824123FB5000CBC4F /* ActivityIndicator.swift in Sources */,
 				8180CEFB24118FDC0005A1CF /* Urls.swift in Sources */,
+				81A942022412EAB1000CBC4F /* SearchVC.swift in Sources */,
 				8180CEF924118FDC0005A1CF /* Character_Base.swift in Sources */,
 				8180CEE624115DCD0005A1CF /* TextCell.swift in Sources */,
+				81A942042412EBAA000CBC4F /* SearchVC+Table.swift in Sources */,
 				81147E7B2410E5FE00059D5A /* CustomNavTitle.swift in Sources */,
 				81147E822410EF1100059D5A /* CharacterCell.swift in Sources */,
 				8180CEDC24114ED20005A1CF /* TBCollectionCell.swift in Sources */,
 				816BEACE24111CA900339E5A /* HomeVC+Protocal.swift in Sources */,
 				81147E752410E36500059D5A /* HomeVC.swift in Sources */,
 				81147E6F2410DC2A00059D5A /* APIManager.swift in Sources */,
-				81A941FE2412D9F9000CBC4F /* UIImageEx.swift in Sources */,
 				8180CED6241147010005A1CF /* Protocals.swift in Sources */,
 				8180CEF224118FDC0005A1CF /* CharacterData.swift in Sources */,
 				81147E872410F42500059D5A /* HomeVC+Table.swift in Sources */,
@@ -730,7 +750,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RBCQ2F8DC4;
+				DEVELOPMENT_TEAM = KD77A89FE6;
 				INFOPLIST_FILE = "$(SRCROOT)/Marvel-ITG/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -750,7 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RBCQ2F8DC4;
+				DEVELOPMENT_TEAM = KD77A89FE6;
 				INFOPLIST_FILE = "$(SRCROOT)/Marvel-ITG/Configuration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (

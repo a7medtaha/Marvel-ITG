@@ -30,5 +30,10 @@ class HomeVC: UIViewController {
     let nav_title_view = (Bundle.main.loadNibNamed("CustomNavTitle", owner: self, options: nil)![0] as? CustomNavTitle)
         navigationItem.titleView = nav_title_view
     }
-
+    
+    
+    @IBAction func searchBarBtnPressed(_ sender: UIBarButtonItem) {
+        presenter.search()
+    }
+    
 }

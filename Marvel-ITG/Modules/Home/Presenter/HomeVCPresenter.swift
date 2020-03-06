@@ -11,6 +11,7 @@ import RealmSwift
 protocol HomeVCView: LoaderDelegate {
     func didSelectItem<T>(with data: T)
     func reloadWithCach()
+   func presentSearchVC<T>(with data: T)
 }
 class HomeVCPresenter {
     private let realm = try! Realm()
@@ -164,5 +165,14 @@ class HomeVCPresenter {
     }
     
     
+    func search()  {
+        if no_connection {
+            view?.presentSearchVC(with: list_cached)
+
+        }else{
+            view?.presentSearchVC(with: list)
+
+        }
+    }
     
 }
