@@ -12,12 +12,14 @@ import UIKit
     var item : Results?
     var itemCached : ResultsCached?
     
+    @IBOutlet weak var bgimage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setTableView()
+        bgimage.blurEffect()
         
     }
 

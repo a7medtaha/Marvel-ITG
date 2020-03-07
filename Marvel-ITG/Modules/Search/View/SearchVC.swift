@@ -11,8 +11,8 @@ import UIKit
 class SearchVC: UIViewController {
     var items : [Results]?
     var itemsCached : [ResultsCached]?
-    var filtereditems: [Results] = []
-    var filteritemsCached: [ResultsCached] = []
+   lazy var filtereditems: [Results] = []
+   lazy var filteritemsCached: [ResultsCached] = []
     let searchController = UISearchController(searchResultsController: nil)
     var isSearchBarEmpty: Bool {
       return searchController.searchBar.text?.isEmpty ?? true

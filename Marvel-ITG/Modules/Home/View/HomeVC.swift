@@ -11,7 +11,7 @@ import UIKit
 class HomeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private (set) var presenter : HomeVCPresenter!
-    private  (set) var activityIndicator = ActivityIndicator()
+   lazy private  (set) var activityIndicator = ActivityIndicator()
    internal var pageCounter = 0
 
     override func viewDidLoad() {
@@ -25,7 +25,7 @@ class HomeVC: UIViewController {
         presenter.get_list(offest: pageCounter)
     }
     
-
+   
     func setNavBarTitle() {
     let nav_title_view = (Bundle.main.loadNibNamed("CustomNavTitle", owner: self, options: nil)![0] as? CustomNavTitle)
         navigationItem.titleView = nav_title_view

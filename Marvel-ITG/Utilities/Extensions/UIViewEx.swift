@@ -30,4 +30,10 @@ extension UIView{
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
     }
+    func blurEffect()  {
+           let blur_effect = UIBlurEffect(style: .dark)
+           let blur_view = UIVisualEffectView(effect: blur_effect)
+           blur_view.frame = self.bounds
+           self.addSubview(blur_view)
+       }
 }

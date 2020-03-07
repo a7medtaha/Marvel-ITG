@@ -55,6 +55,48 @@ extension DetailsVC: UICollectionViewDelegate,UICollectionViewDataSource,UIColle
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SliderView") as! SliderView
+        let image_url = (item?.thumbnail?.path ?? "") + "/\(xlarge)." + (item?.thumbnail?.exten ?? "")
+        var images : [(String,String)] = []
+        
+        switch collectionView.tag {
+            
+        case 2:
+          let name =  item != nil ? item?.comics?.items?[indexPath.item].name ?? "" :  itemCached?.comics?.items[indexPath.item].name ?? ""
+            for _ in 0..<(collectionView.tag * 2 ){
+                images.append((name,image_url))
+            }
+            
+            
+        case 3:
+               let name =  item != nil ? item?.series?.items?[indexPath.item].name ?? "" :  itemCached?.series?.items[indexPath.item].name ?? ""
+            for _ in 0..<(collectionView.tag * 2 ){
+                images.append((name,image_url))
+            }
+            
+        case 4:
+               let name =  item != nil ? item?.stories?.items?[indexPath.item].name ?? "" :  itemCached?.stories?.items[indexPath.item].name ?? ""
+            for _ in 0..<(collectionView.tag * 2 ){
+                images.append((name,image_url))
+            }
+            
+        case 5:
+               let name =  item != nil ? item?.events?.items?[indexPath.item].name ?? "" :  itemCached?.events?.items[indexPath.item].name ?? ""
+            for _ in 0..<(collectionView.tag * 2 ){
+                images.append((name,image_url))
+            }
+            
+        default:
+            break
+            
+        }
+        vc.images = images
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: collectionView.frame.height)
     }

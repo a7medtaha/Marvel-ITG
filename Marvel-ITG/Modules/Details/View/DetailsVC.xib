@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsVC" customModule="Marvel_ITG" customModuleProvider="target">
             <connections>
+                <outlet property="bgimage" destination="BJp-ID-iW6" id="OQj-cm-nNz"/>
                 <outlet property="tableView" destination="84Z-A7-eBm" id="Jxj-wI-lEa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,20 +20,31 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-A7-eBm">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="BJp-ID-iW6">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84Z-A7-eBm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="BJp-ID-iW6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6Wg-HJ-Ogh"/>
+                <constraint firstItem="BJp-ID-iW6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="AGl-b4-1Kd"/>
                 <constraint firstItem="84Z-A7-eBm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="BKR-1a-GH4"/>
                 <constraint firstItem="84Z-A7-eBm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="EcQ-cf-jKp"/>
                 <constraint firstItem="84Z-A7-eBm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="firstBaseline" id="Uxe-8K-RHr"/>
                 <constraint firstItem="84Z-A7-eBm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zg7-tw-uDv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BJp-ID-iW6" secondAttribute="bottom" id="qfQ-a6-gdk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BJp-ID-iW6" secondAttribute="trailing" id="sVY-WS-wuN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="128.18590704647679"/>
         </view>
     </objects>
+    <resources>
+        <image name="no-image" width="170.5" height="170.5"/>
+    </resources>
 </document>

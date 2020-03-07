@@ -17,7 +17,7 @@ extension DetailsVC:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = .darkGray
+        view.tintColor = .clear
         
         if let header = view as? UITableViewHeaderFooterView {
             header.textLabel?.backgroundColor = .clear

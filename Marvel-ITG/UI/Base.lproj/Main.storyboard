@@ -77,6 +77,80 @@
             </objects>
             <point key="canvasLocation" x="1876" y="88.605697151424295"/>
         </scene>
+        <!--Slider View-->
+        <scene sceneID="2Pg-1S-NTr">
+            <objects>
+                <viewController storyboardIdentifier="SliderView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XT5-o0-dR0" customClass="SliderView" customModule="Marvel_ITG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="huJ-xY-ZHv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-image" translatesAutoresizingMaskIntoConstraints="NO" id="9PM-Zg-abP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wa8-0o-gYB">
+                                <rect key="frame" x="19" y="66.5" width="337.5" height="534"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v7l-k9-mnl" customClass="UPCarouselFlowLayout" customModule="Marvel_ITG" customModuleProvider="target">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="sideItemScale">
+                                            <real key="value" value="0.59999999999999998"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="sideItemAlpha">
+                                            <real key="value" value="0.40000000000000002"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICR-CG-wMa" customClass="UIButtonX" customModule="Marvel_ITG" customModuleProvider="target">
+                                <rect key="frame" x="325" y="10" width="40" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="5oD-X4-iUA"/>
+                                    <constraint firstAttribute="height" constant="40" id="CMC-Yz-HWn"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="cancel-music"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closedBtnPressed:" destination="XT5-o0-dR0" eventType="touchUpInside" id="Waq-dh-ozE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wa8-0o-gYB" firstAttribute="height" secondItem="huJ-xY-ZHv" secondAttribute="height" multiplier="0.8" id="AUm-Mo-Mxp"/>
+                            <constraint firstItem="9PM-Zg-abP" firstAttribute="top" secondItem="huJ-xY-ZHv" secondAttribute="top" id="Ewn-bw-6HH"/>
+                            <constraint firstItem="wa8-0o-gYB" firstAttribute="centerX" secondItem="huJ-xY-ZHv" secondAttribute="centerX" id="GfC-wT-rpT"/>
+                            <constraint firstItem="PcB-ze-JPd" firstAttribute="bottom" secondItem="9PM-Zg-abP" secondAttribute="bottom" id="J8E-Lw-hRi"/>
+                            <constraint firstItem="ICR-CG-wMa" firstAttribute="top" secondItem="PcB-ze-JPd" secondAttribute="top" constant="10" id="KcA-de-cqu"/>
+                            <constraint firstItem="PcB-ze-JPd" firstAttribute="trailing" secondItem="9PM-Zg-abP" secondAttribute="trailing" id="W41-SI-CNT"/>
+                            <constraint firstItem="9PM-Zg-abP" firstAttribute="leading" secondItem="PcB-ze-JPd" secondAttribute="leading" id="cbl-2x-7Ne"/>
+                            <constraint firstItem="PcB-ze-JPd" firstAttribute="trailing" secondItem="ICR-CG-wMa" secondAttribute="trailing" constant="10" id="cxK-pt-XhF"/>
+                            <constraint firstItem="wa8-0o-gYB" firstAttribute="centerY" secondItem="huJ-xY-ZHv" secondAttribute="centerY" id="hZc-E6-epw"/>
+                            <constraint firstItem="wa8-0o-gYB" firstAttribute="width" secondItem="huJ-xY-ZHv" secondAttribute="width" multiplier="0.9" id="iEC-aB-hwj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PcB-ze-JPd"/>
+                    </view>
+                    <connections>
+                        <outlet property="bgImage" destination="9PM-Zg-abP" id="Weu-eI-UWs"/>
+                        <outlet property="collectionView" destination="wa8-0o-gYB" id="n45-ir-3VH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8x-GS-oEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2783" y="103"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0M7-hT-K8z">
             <objects>
@@ -97,4 +171,8 @@
             <point key="canvasLocation" x="138.40000000000001" y="88.605697151424295"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cancel-music" width="21" height="21"/>
+        <image name="no-image" width="170.5" height="170.5"/>
+    </resources>
 </document>

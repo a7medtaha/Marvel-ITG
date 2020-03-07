@@ -14,7 +14,7 @@ protocol HomeVCView: LoaderDelegate {
    func presentSearchVC<T>(with data: T)
 }
 class HomeVCPresenter {
-    private let realm = try! Realm()
+   lazy private var realm = try! Realm()
     private var no_connection = false
     private var cached: Bool {
         get {
@@ -24,13 +24,13 @@ class HomeVCPresenter {
             UserDefaults.standard.synchronize()
         }
     }
-    private let interactor = HomeVCInteractor()
-    private var list = [Results]()
-    private var list_cached = [ResultsCached]()
+  lazy  private var interactor = HomeVCInteractor()
+  lazy  private var list = [Results]()
+  lazy  private var list_cached = [ResultsCached]()
     weak var view: HomeVCView?
     init(view:HomeVCView) {
         self.view = view
-        print("#realm = ",Realm.Configuration.defaultConfiguration.fileURL!)
+//        print("#realm = ",Realm.Configuration.defaultConfiguration.fileURL!)
         
     }
     
