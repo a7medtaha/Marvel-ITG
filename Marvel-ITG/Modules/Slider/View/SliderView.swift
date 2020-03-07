@@ -14,9 +14,9 @@ class SliderView: UIViewController {
            let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
            var pageSize = layout.itemSize
            if layout.scrollDirection == .horizontal {
-               pageSize.width -= layout.minimumLineSpacing
+               pageSize.width += layout.minimumLineSpacing
            } else {
-               pageSize.height -= layout.minimumLineSpacing
+               pageSize.height += layout.minimumLineSpacing
            }
            return pageSize
        }
@@ -38,7 +38,7 @@ class SliderView: UIViewController {
     }
     fileprivate func setupLayout() {
           let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
-          layout.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 5)
+          layout.spacingMode = UPCarouselFlowLayoutSpacingMode.overlap(visibleOffset: 15)
         layout.itemSize = collectionView.frame.size
       }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

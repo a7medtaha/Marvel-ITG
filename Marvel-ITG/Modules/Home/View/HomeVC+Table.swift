@@ -27,13 +27,13 @@ extension HomeVC:UITableViewDelegate,UITableViewDataSource {
 
         }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height / 3.8
     }
-    internal func setTableView()  {
+    internal func setTableView()  {    
         tableView.register(UINib(nibName: "CharacterCell", bundle: .main), forCellReuseIdentifier: "CharacterCell")
         tableView.allowsMultipleSelection = false
-        tableView.tableFooterView = UIView(frame: .zero)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none

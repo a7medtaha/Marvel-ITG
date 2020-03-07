@@ -95,7 +95,6 @@ extension DetailsVC:UITableViewDelegate,UITableViewDataSource {
         view?.setPhoto(with: image_url)
         view?.delegate = self
         tableView.tableHeaderView = view
-        tableView.tableHeaderView = view
         
         tableView.register(UINib(nibName: "TBCollectionCell", bundle: .main), forCellReuseIdentifier: "TBCollectionCell")
         tableView.register(UINib(nibName: "TextCell", bundle: .main), forCellReuseIdentifier: "TextCell")

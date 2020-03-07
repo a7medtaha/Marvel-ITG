@@ -21,7 +21,9 @@ extension HomeVC: HomeVCView{
     }
     
     func reloadWithCach() {
-        tableView.reloadData()
+    
+            tableView.tableFooterView = view
+      
     }
     
     func didSelectItem<T>(with data: T) {
@@ -53,12 +55,15 @@ extension HomeVC: HomeVCView{
     
     func onSuccess<T>(_ msg: T) {
         pageCounter += 1
+        let view = (Bundle.main.loadNibNamed("LoaderTBFooter", owner: self, options: nil)![0] as? LoaderTBFooter)
+        view?.loader_start()
+            tableView.tableFooterView = view
         tableView.reloadData()
     }
     
     
     func loader_start() {
-        activityIndicator.displayActivity(view: tableView)
+        activityIndicator.displayActivity(view: view)
         activityIndicator.startAanimating()
     }
     

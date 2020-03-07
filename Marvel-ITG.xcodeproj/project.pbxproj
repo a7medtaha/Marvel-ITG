@@ -58,6 +58,8 @@
 		81AA814D2410D2980082C44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81AA814C2410D2980082C44C /* Assets.xcassets */; };
 		81AA81502410D2980082C44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AA814E2410D2980082C44C /* LaunchScreen.storyboard */; };
 		81B1E64C2413949800FDD4D2 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1E64B2413949800FDD4D2 /* UPCarouselFlowLayout.swift */; };
+		81B1E6562413A9DF00FDD4D2 /* LoaderTBFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B1E6552413A9DF00FDD4D2 /* LoaderTBFooter.swift */; };
+		81B1E6582413A9EA00FDD4D2 /* LoaderTBFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B1E6572413A9EA00FDD4D2 /* LoaderTBFooter.xib */; };
 		E758A544439C70A1EE715B37 /* Pods_Marvel_ITG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3BA6C885F0A4EF0127AF98 /* Pods_Marvel_ITG.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +120,8 @@
 		81AA814F2410D2980082C44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81AA81512410D2980082C44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81B1E64B2413949800FDD4D2 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		81B1E6552413A9DF00FDD4D2 /* LoaderTBFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderTBFooter.swift; sourceTree = "<group>"; };
+		81B1E6572413A9EA00FDD4D2 /* LoaderTBFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderTBFooter.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,7 @@
 		81147E772410E5C300059D5A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				81B1E6542413A9B200FDD4D2 /* Footer */,
 				8180CECF241144840005A1CF /* Details Table Header */,
 				816BEAD824111E0F00339E5A /* Navigation Title */,
 				816BEAD324111E0700339E5A /* Background View */,
@@ -490,6 +495,15 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		81B1E6542413A9B200FDD4D2 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				81B1E6552413A9DF00FDD4D2 /* LoaderTBFooter.swift */,
+				81B1E6572413A9EA00FDD4D2 /* LoaderTBFooter.xib */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -554,6 +568,7 @@
 				8180CEDD24114ED20005A1CF /* TBCollectionCell.xib in Resources */,
 				8180CEE224114F790005A1CF /* ItemCell.xib in Resources */,
 				8180CED3241144BB0005A1CF /* DetailsHeader.xib in Resources */,
+				81B1E6582413A9EA00FDD4D2 /* LoaderTBFooter.xib in Resources */,
 				81AA81502410D2980082C44C /* LaunchScreen.storyboard in Resources */,
 				8180CEE724115DCD0005A1CF /* TextCell.xib in Resources */,
 				816D33A12413837D00CA533D /* SliderCell.xib in Resources */,
@@ -641,6 +656,7 @@
 				8180CED6241147010005A1CF /* Protocals.swift in Sources */,
 				8180CEF224118FDC0005A1CF /* CharacterData.swift in Sources */,
 				81147E872410F42500059D5A /* HomeVC+Table.swift in Sources */,
+				81B1E6562413A9DF00FDD4D2 /* LoaderTBFooter.swift in Sources */,
 				8180CEF424118FDC0005A1CF /* Stories.swift in Sources */,
 				816D33A02413837D00CA533D /* SliderCell.swift in Sources */,
 				8180CEFF2411B22C0005A1CF /* UIViewEx.swift in Sources */,
