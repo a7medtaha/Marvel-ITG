@@ -10,20 +10,18 @@ import UIKit
 extension HomeVC: HomeVCView{
     func presentSearchVC<T>(with data: T) {
         let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "SearchVC") as! SearchVC
-               if ((data as? [Results]) != nil){
-                print("data",data)
-                   vc.items = data as? [Results]
-               }
-               if ((data as? [ResultsCached]) != nil){
-                   vc.itemsCached = data as? [ResultsCached]
-               }
+        if ((data as? [Results]) != nil){
+            print("data",data)
+            vc.items = data as? [Results]
+        }
+        if ((data as? [ResultsCached]) != nil){
+            vc.itemsCached = data as? [ResultsCached]
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func reloadWithCach() {
-    
-            tableView.tableFooterView = view
-      
+        tableView.reloadData()
     }
     
     func didSelectItem<T>(with data: T) {
@@ -57,7 +55,7 @@ extension HomeVC: HomeVCView{
         pageCounter += 1
         let view = (Bundle.main.loadNibNamed("LoaderTBFooter", owner: self, options: nil)![0] as? LoaderTBFooter)
         view?.loader_start()
-            tableView.tableFooterView = view
+        tableView.tableFooterView = view
         tableView.reloadData()
     }
     
